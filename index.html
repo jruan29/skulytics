@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skulytics - eCommerce Performance Intelligence</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-content">
+      <div class="nav-logo">
+        <i class="fas fa-chart-line"></i>
+        Skulytics
+      </div>
+      <div class="nav-tabs">
+        <button class="nav-tab active" data-module="dashboard">Main Dashboard</button>
+        <button class="nav-tab" data-module="product">Product Performance</button>
+        <button class="nav-tab" data-module="content">Content Crafter</button>
+        <button class="nav-tab disabled" disabled>Demand Forecasting*</button>
+        <button class="nav-tab disabled" disabled>Media Spend*</button>
+        <button class="nav-tab disabled" disabled>Competitor Intel*</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar" id="filterBar">
+    <div class="filter-content">
+      <div class="filters-group">
+        <select class="filter-select">
+          <option>November 2025</option>
+          <option>October 2025</option>
+          <option>September 2025</option>
+        </select>
+        <select class="filter-select" id="channelFilter">
+          <option value="all">All Channels</option>
+          <option value="Target">Target</option>
+          <option value="Walmart">Walmart</option>
+          <option value="Amazon">Amazon</option>
+          <option value="Kroger">Kroger</option>
+          <option value="Costco">Costco</option>
+        </select>
+        <select class="filter-select">
+          <option>All Categories</option>
+          <option>Household</option>
+          <option>Beverages</option>
+          <option>Snacks</option>
+        </select>
+        <select class="filter-select" id="skuFilter">
+          <option value="all">All SKUs</option>
+          <option value="SKU001">SKU001 - Premium Protein Bar</option>
+          <option value="SKU002">SKU002 - Organic Energy Drink</option>
+          <option value="SKU003">SKU003 - Multi-Purpose Cleaner</option>
+          <option value="SKU004">SKU004 - Natural Shampoo</option>
+        </select>
+        <select class="filter-select">
+          <option>All Brands</option>
+          <option>CleanHome</option>
+          <option>BrewMasters</option>
+          <option>SnackSmart</option>
+        </select>
+      </div>
+      <button class="btn-filter-toggle" id="filterToggle">Hide Filters</button>
+    </div>
+  </div>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    <!-- MODULE 1: MAIN DASHBOARD -->
+    <div class="module active" id="dashboard">
+      <!-- Alert Panel -->
+      <div class="alert-grid">
+        <!-- Alert 1 - URGENT -->
+        <div class="alert-card urgent" data-alert="alert1">
+          <div class="alert-header">
+            <span class="alert-icon"><i class="fas fa-exclamation-triangle"></i></span>
+            <span class="alert-badge urgent-badge">URGENT</span>
+          </div>
+          <h3 class="alert-title">SKU003 (Multi-Purpose Cleaner) — Conversion Down 22% at Target</h3>
+          <p class="alert-details">OOS Days ↑150%, Rating ↓0.4 stars, Competitor price cut 15%</p>
+          <p class="alert-time">2 hours ago</p>
+          <div class="alert-actions">
+            <button class="btn btn-investigate" data-sku="SKU003" data-channel="Target"><i class="fas fa-search"></i> Investigate</button>
+            <button class="btn btn-chat" data-alert="alert1"><i class="fas fa-comments"></i> Ask in Chat</button>
+          </div>
+        </div>
+
+        <!-- Alert 2 - MONITOR -->
+        <div class="alert-card monitor">
+          <div class="alert-header">
+            <span class="alert-icon"><i class="fas fa-chart-line"></i></span>
+            <span class="alert-badge monitor-badge">MONITOR</span>
+          </div>
+          <h3 class="alert-title">SKU002 (Organic Energy Drink) — Views declining 15% at Walmart</h3>
+          <p class="alert-details">Organic rank dropped from #4 to #8. Keyword score: 52/100</p>
+          <p class="alert-time">5 hours ago</p>
+          <div class="alert-actions">
+            <button class="btn btn-investigate"><i class="fas fa-search"></i> Investigate</button>
+            <button class="btn btn-chat"><i class="fas fa-comments"></i> Ask in Chat</button>
+          </div>
+        </div>
+
+        <!-- Alert 3 - OPPORTUNITY -->
+        <div class="alert-card opportunity">
+          <div class="alert-header">
+            <span class="alert-icon"><i class="fas fa-bullseye"></i></span>
+            <span class="alert-badge opportunity-badge">OPPORTUNITY</span>
+          </div>
+          <h3 class="alert-title">SKU001 (Premium Protein Bar) — ROAS increased 45% on Amazon</h3>
+          <p class="alert-details">Paid media efficiency up. Consider increasing budget.</p>
+          <p class="alert-time">1 day ago</p>
+          <div class="alert-actions">
+            <button class="btn btn-teal"><i class="fas fa-chart-bar"></i> View Details</button>
+            <button class="btn btn-chat"><i class="fas fa-comments"></i> Ask in Chat</button>
+          </div>
+        </div>
+
+        <!-- Alert 4 - MONITOR -->
+        <div class="alert-card monitor">
+          <div class="alert-header">
+            <span class="alert-icon"><i class="fas fa-box"></i></span>
+            <span class="alert-badge monitor-badge">MONITOR</span>
+          </div>
+          <h3 class="alert-title">SKU007 — Stock running low at Kroger (3 days supply)</h3>
+          <p class="alert-details">Restock recommended to avoid OOS</p>
+          <p class="alert-time">6 hours ago</p>
+          <div class="alert-actions">
+            <button class="btn btn-investigate"><i class="fas fa-search"></i> Investigate</button>
+            <button class="btn btn-chat"><i class="fas fa-comments"></i> Ask in Chat</button>
+          </div>
+        </div>
+
+        <!-- Alert 5 - INFO -->
+        <div class="alert-card info">
+          <div class="alert-header">
+            <span class="alert-icon"><i class="fas fa-info-circle"></i></span>
+            <span class="alert-badge info-badge">INFO</span>
+          </div>
+          <h3 class="alert-title">SKU005 (Vitamin Supplement) — Content update deployed at Costco</h3>
+          <p class="alert-details">Tracking enabled. Impact visible in 48-72 hours.</p>
+          <p class="alert-time">1 day ago</p>
+          <div class="alert-actions">
+            <button class="btn btn-teal"><i class="fas fa-chart-line"></i> Track Impact</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Active Filter Badge -->
+      <div class="active-filter-badge" id="activeFilterBadge" style="display: none;">
+        <div class="filter-badge-content">
+          <span class="filter-badge-text"><i class="fas fa-filter"></i> Active Filter: <span id="filterBadgeText"></span></span>
+          <button class="btn-clear-filter" id="clearFilter"><i class="fas fa-times"></i> Clear Filters</button>
+        </div>
+        <button class="btn btn-full-analysis" id="viewFullAnalysis"><i class="fas fa-chart-bar"></i> View Full Product Analysis</button>
+      </div>
+
+      <!-- KPI Tile Grid -->
+      <div class="kpi-grid">
+        <div class="kpi-tile">
+          <h4 class="kpi-label">Gross Sales</h4>
+          <div class="kpi-value" id="kpiGrossSales">$1,247,890</div>
+          <div class="kpi-change positive" id="kpiGrossSalesChange">↑ 12.4% vs LM</div>
+        </div>
+        <div class="kpi-tile">
+          <h4 class="kpi-label">Units Sold</h4>
+          <div class="kpi-value" id="kpiUnitsSold">18,432</div>
+          <div class="kpi-change positive" id="kpiUnitsSoldChange">↑ 8.2% vs LM</div>
+        </div>
+        <div class="kpi-tile">
+          <h4 class="kpi-label">Average CVR</h4>
+          <div class="kpi-value" id="kpiCVR">3.4%</div>
+          <div class="kpi-change negative" id="kpiCVRChange">↓ 2.1% vs LM</div>
+        </div>
+        <div class="kpi-tile">
+          <h4 class="kpi-label">Avg Organic Rank</h4>
+          <div class="kpi-value" id="kpiRank">#6.2</div>
+          <div class="kpi-change neutral" id="kpiRankChange">Stable</div>
+        </div>
+        <div class="kpi-tile">
+          <h4 class="kpi-label">OOS %</h4>
+          <div class="kpi-value" id="kpiOOS">4.2%</div>
+          <div class="kpi-change negative" id="kpiOOSChange">↑ 1.8% vs LM</div>
+        </div>
+        <div class="kpi-tile">
+          <h4 class="kpi-label">Content Health Score</h4>
+          <div class="kpi-value" id="kpiContent">72/100</div>
+          <div class="kpi-change warning" id="kpiContentChange">↓ 8pts vs LM</div>
+        </div>
+        <div class="kpi-tile">
+          <h4 class="kpi-label">Total Media Spend</h4>
+          <div class="kpi-value" id="kpiMediaSpend">$124,500</div>
+          <div class="kpi-change info" id="kpiMediaSpendChange">↑ 15% vs LM</div>
+        </div>
+        <div class="kpi-tile">
+          <h4 class="kpi-label">ROAS</h4>
+          <div class="kpi-value" id="kpiROAS">3.8x</div>
+          <div class="kpi-change positive" id="kpiROASChange">↑ 0.4x vs LM</div>
+        </div>
+        <div class="kpi-tile">
+          <h4 class="kpi-label">Avg Paid Rank</h4>
+          <div class="kpi-value" id="kpiPaidRank">#4.1</div>
+          <div class="kpi-change positive" id="kpiPaidRankChange">↑ 2 spots vs LM</div>
+        </div>
+      </div>
+
+      <!-- Charts Section -->
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3 class="chart-title">Monthly Sales Trend</h3>
+          <div class="chart-container">
+            <canvas id="salesTrendChart"></canvas>
+          </div>
+        </div>
+        <div class="chart-card">
+          <h3 class="chart-title">Top Products by Sales</h3>
+          <div class="chart-container">
+            <canvas id="topProductsChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Commerce Journey Funnel -->
+      <div class="funnel-container">
+        <h3 class="section-title">Commerce Journey Funnel</h3>
+        <div class="funnel-grid">
+          <div class="funnel-stage healthy">
+            <div class="funnel-icon"><i class="fas fa-eye"></i></div>
+            <h4 class="funnel-title">Discovery</h4>
+            <div class="funnel-metric" id="funnelViews">245K Views</div>
+            <div class="funnel-metric" id="funnelRank">Avg Rank #6.2</div>
+            <span class="status-badge healthy-badge" id="funnelDiscoveryStatus">Healthy</span>
+          </div>
+          <div class="funnel-stage warning">
+            <div class="funnel-icon"><i class="fas fa-hand-pointer"></i></div>
+            <h4 class="funnel-title">Engagement</h4>
+            <div class="funnel-metric" id="funnelTraffic">89K P-Page Traffic</div>
+            <div class="funnel-metric" id="funnelContentScore">Content Score 72/100</div>
+            <span class="status-badge warning-badge" id="funnelEngagementStatus">Needs Work</span>
+          </div>
+          <div class="funnel-stage warning" id="funnelConversionStage">
+            <div class="funnel-icon"><i class="fas fa-shopping-cart"></i></div>
+            <h4 class="funnel-title">Conversion</h4>
+            <div class="funnel-metric" id="funnelCVR">CVR 3.4%</div>
+            <div class="funnel-metric" id="funnelATC">28.5K Add-to-Cart</div>
+            <span class="status-badge warning-badge" id="funnelConversionStatus">Needs Work</span>
+          </div>
+          <div class="funnel-stage healthy" id="funnelSalesStage">
+            <div class="funnel-icon"><i class="fas fa-money-bill-wave"></i></div>
+            <h4 class="funnel-title">Sales</h4>
+            <div class="funnel-metric" id="funnelSales">$1.24M Sales</div>
+            <div class="funnel-metric" id="funnelUnits">18.4K Units</div>
+            <span class="status-badge healthy-badge" id="funnelSalesStatus">Healthy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODULE 2: PRODUCT PERFORMANCE -->
+    <div class="module" id="product">
+      <!-- Alert Context Banner -->
+      <div class="context-banner">
+        <div class="context-header">
+          <span class="context-icon"><i class="fas fa-exclamation-triangle"></i></span>
+          <h3 class="context-title">SKU003 — Conversion Down 22%</h3>
+        </div>
+        <p class="context-details">Contributing Factors: OOS Days ↑150%, Rating ↓0.4 stars, Competitor Price Cut 15%</p>
+        <div class="context-ai">
+          <span class="ai-icon"><i class="fas fa-lightbulb"></i></span>
+          <span class="ai-text">Investigate root causes. Potential factors: out-of-stock for 3 days, negative review spike, competitor action.</span>
+        </div>
+      </div>
+
+      <!-- KPI Metadata Tiles -->
+      <div class="metadata-grid">
+        <div class="metadata-tile">
+          <div class="metadata-header">
+            <h4 class="metadata-label">Avg Organic Rank</h4>
+            <span class="status-dot green"></span>
+          </div>
+          <div class="metadata-value">#3</div>
+          <div class="metadata-status">Stable</div>
+          <div class="metadata-note">No change vs. last week</div>
+        </div>
+        <div class="metadata-tile">
+          <div class="metadata-header">
+            <h4 class="metadata-label">Avg Paid Rank</h4>
+            <span class="status-dot orange"></span>
+          </div>
+          <div class="metadata-value">#7</div>
+          <div class="metadata-status">↓2 spots</div>
+          <div class="metadata-note">Declined from #5</div>
+        </div>
+        <div class="metadata-tile">
+          <div class="metadata-header">
+            <h4 class="metadata-label">Sales</h4>
+            <span class="status-dot red"></span>
+          </div>
+          <div class="metadata-value">$12,400</div>
+          <div class="metadata-status">↓18% WoW</div>
+          <div class="metadata-note">Down from $15,100</div>
+        </div>
+        <div class="metadata-tile">
+          <div class="metadata-header">
+            <h4 class="metadata-label">Stock Status</h4>
+            <span class="status-dot red"></span>
+          </div>
+          <div class="metadata-value">⚠️ OOS for 3 days</div>
+          <div class="metadata-status">Nov 10-12</div>
+          <div class="metadata-note">Restock Alert Sent</div>
+        </div>
+        <div class="metadata-tile">
+          <div class="metadata-header">
+            <h4 class="metadata-label">P-Page Traffic</h4>
+            <span class="status-dot orange"></span>
+          </div>
+          <div class="metadata-value">8,200</div>
+          <div class="metadata-status">↓8% WoW</div>
+          <div class="metadata-note">Down from 8,900</div>
+        </div>
+        <div class="metadata-tile">
+          <div class="metadata-header">
+            <h4 class="metadata-label">CVR</h4>
+            <span class="status-dot red"></span>
+          </div>
+          <div class="metadata-value">2.8%</div>
+          <div class="metadata-status">↓22% WoW</div>
+          <div class="metadata-note">⚠️ Primary Problem</div>
+        </div>
+      </div>
+
+      <!-- Charts Section -->
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3 class="chart-title">SKU Performance Comparison - Household Category at Target</h3>
+          <div class="chart-container">
+            <canvas id="skuComparisonChart"></canvas>
+          </div>
+        </div>
+        <div class="chart-card">
+          <h3 class="chart-title">Conversion Rate Trend - Last 30 Days</h3>
+          <div class="chart-container">
+            <canvas id="cvrTrendChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Opportunity Table -->
+      <div class="table-container">
+        <h3 class="section-title">Opportunity Analysis</h3>
+        <table class="opportunity-table">
+          <thead>
+            <tr>
+              <th>Issue Detected</th>
+              <th>Root Cause</th>
+              <th>Recommended Action</th>
+              <th>Forecasted Impact</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CVR Drop 22%</td>
+              <td>3-day stockout (Nov 10-12)</td>
+              <td>Restock immediately, prevent future OOS</td>
+              <td>CVR +1.1pts, Sales +$1,800</td>
+              <td><button class="btn btn-outline">View Details</button></td>
+            </tr>
+            <tr>
+              <td>Rating Decline (4.6→4.2)</td>
+              <td>3 new 1-star reviews mentioning "ineffective cleaning"</td>
+              <td>Launch review response campaign, address concerns</td>
+              <td>Stabilize rating, prevent decline</td>
+              <td><button class="btn btn-outline">View Reviews</button></td>
+            </tr>
+            <tr>
+              <td>Competitive Pressure</td>
+              <td>Competitor EcoClean cut price 15% (now $8.99 vs. $10.49)</td>
+              <td>Test price match ($8.99) or promotional bundle</td>
+              <td>Maintain market share</td>
+              <td><button class="btn btn-outline">Simulate Price</button></td>
+            </tr>
+            <tr class="highlight-row">
+              <td>Low Content Score (58/100)</td>
+              <td>Image Score: 42/100 (only 3 images, no lifestyle), Description: 45/100</td>
+              <td>Add 2 lifestyle images, expand description by 150 chars</td>
+              <td>Organic Rank +2 spots (#3→#1), CVR +0.8pts, Sales +$1,200</td>
+              <td><button class="btn btn-primary" id="openSimulator">⭐ Simulate Fix</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- MODULE 3: CONTENT CRAFTER -->
+    <div class="module" id="content">
+      <!-- AI Suggestion Banner -->
+      <div class="suggestion-banner">
+        <div class="suggestion-header">
+          <span class="suggestion-icon"><i class="fas fa-lightbulb"></i></span>
+          <h3 class="suggestion-title">SKU003 — Content Score has dropped 33% at Target</h3>
+        </div>
+        <p class="suggestion-details">AI Recommendation: Add lifestyle images and optimize description to improve SEO.</p>
+      </div>
+
+      <!-- KPI Score Tiles -->
+      <div class="score-tiles">
+        <div class="score-tile">
+          <div class="score-label">Overall Health</div>
+          <div class="score-badge critical">58/100</div>
+        </div>
+        <div class="score-tile">
+          <div class="score-label">Title Score</div>
+          <div class="score-badge warning">72/100</div>
+        </div>
+        <div class="score-tile">
+          <div class="score-label">Description Score</div>
+          <div class="score-badge critical">45/100</div>
+        </div>
+        <div class="score-tile highlight">
+          <div class="score-label">Image Score</div>
+          <div class="score-badge critical glow">42/100</div>
+        </div>
+        <div class="score-tile">
+          <div class="score-label">Keyword Score</div>
+          <div class="score-badge critical">55/100</div>
+        </div>
+        <div class="score-tile">
+          <div class="score-label">Rating Score</div>
+          <div class="score-badge warning">4.2/5</div>
+        </div>
+        <div class="score-tile">
+          <div class="score-label">Review Score</div>
+          <div class="score-badge warning">68/100</div>
+        </div>
+      </div>
+
+      <!-- 3-Column Layout -->
+      <div class="content-grid" id="contentComparison">
+        <!-- Column 1: Existing Content -->
+        <div class="content-column existing">
+          <div class="column-header">
+            <h3>Existing Content</h3>
+            <p class="column-subtitle">Current state at Target</p>
+          </div>
+          <div class="content-section">
+            <h4>Product Title</h4>
+            <div class="content-value">Multi-Purpose Cleaner</div>
+            <div class="content-meta">Character count: 22</div>
+            <div class="content-issues">
+              <div class="issue"><i class="fas fa-exclamation-circle"></i> Missing keywords: 'eco-friendly', 'antibacterial', 'non-toxic'</div>
+              <div class="issue"><i class="fas fa-exclamation-circle"></i> No brand mention</div>
+              <div class="issue"><i class="fas fa-exclamation-circle"></i> Generic title</div>
+            </div>
+          </div>
+          <div class="content-section">
+            <h4>Product Description</h4>
+            <div class="content-value">Effective cleaning solution for multiple surfaces.</div>
+            <div class="content-meta">Word count: 7 | Character count: 54</div>
+            <div class="content-issues">
+              <div class="issue"><i class="fas fa-exclamation-circle"></i> 75% shorter than competitors (avg 215 chars)</div>
+              <div class="issue"><i class="fas fa-exclamation-circle"></i> Missing ingredient information</div>
+              <div class="issue"><i class="fas fa-exclamation-circle"></i> No benefit statements</div>
+              <div class="issue"><i class="fas fa-exclamation-circle"></i> No use case examples</div>
+            </div>
+          </div>
+          <div class="content-section">
+            <h4>Images</h4>
+            <div class="image-list">
+              <div class="image-item"><i class="fas fa-image"></i> Product Image 1</div>
+              <div class="image-item"><i class="fas fa-image"></i> Product Image 2</div>
+              <div class="image-item"><i class="fas fa-image"></i> Product Image 3</div>
+            </div>
+            <div class="content-issues">
+              <div class="issue"><i class="fas fa-exclamation-circle"></i> Only 3 images. Competitors average 8</div>
+              <div class="issue"><i class="fas fa-exclamation-circle"></i> Missing lifestyle images</div>
+              <div class="issue"><i class="fas fa-exclamation-circle"></i> No in-use demonstration</div>
+            </div>
+          </div>
+          <div class="content-section">
+            <h4>Keywords Present</h4>
+            <div class="content-value">cleaner, multi-purpose, cleaning</div>
+            <div class="content-meta">3 keywords</div>
+            <div class="content-issues">
+              <div class="issue"><i class="fas fa-exclamation-circle"></i> Missing 9 high-value keywords</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: AI-Generated Improvements -->
+        <div class="content-column improved">
+          <div class="column-header">
+            <h3><i class="fas fa-sparkles"></i> AI-Generated Improvements</h3>
+            <p class="column-subtitle">Optimized content recommendations</p>
+          </div>
+          <div class="content-section">
+            <h4>New Title</h4>
+            <div class="content-value improved-text">CleanHome Eco-Friendly Multi-Purpose Cleaner | Antibacterial, Non-Toxic Formula</div>
+            <div class="content-meta">Character count: 82</div>
+            <div class="content-improvements">
+              <div class="improvement"><i class="fas fa-check"></i> Added brand name</div>
+              <div class="improvement"><i class="fas fa-check"></i> Included 3 high-value keywords</div>
+              <div class="improvement"><i class="fas fa-check"></i> SEO-optimized length</div>
+            </div>
+          </div>
+          <div class="content-section">
+            <h4>New Description</h4>
+            <div class="content-value improved-text">CleanHome's powerful multi-purpose cleaner tackles tough messes on kitchen counters, bathroom tiles, glass, and more. Our eco-friendly, antibacterial formula is non-toxic, biodegradable, and safe for families and pets. No harsh chemicals—just effective cleaning with a fresh lemon scent. Perfect for daily use.</div>
+            <div class="content-meta">Word count: 46 | Character count: 285</div>
+            <div class="content-improvements">
+              <div class="improvement"><i class="fas fa-check"></i> Matches competitor length benchmark</div>
+              <div class="improvement"><i class="fas fa-check"></i> Includes benefit statements (family-safe, eco-friendly)</div>
+              <div class="improvement"><i class="fas fa-check"></i> Adds sensory detail (fresh lemon scent)</div>
+              <div class="improvement"><i class="fas fa-check"></i> Lists use cases (kitchen, bathroom, glass)</div>
+              <div class="improvement"><i class="fas fa-check"></i> Addresses pain point (no harsh chemicals)</div>
+            </div>
+          </div>
+          <div class="content-section">
+            <h4>New Images</h4>
+            <div class="image-list">
+              <div class="image-item new"><i class="fas fa-images"></i> Lifestyle Image 1: Person cleaning kitchen</div>
+              <div class="image-item new"><i class="fas fa-images"></i> Lifestyle Image 2: Product on counter with spray</div>
+              <div class="image-item new"><i class="fas fa-images"></i> Ingredient flat lay</div>
+              <div class="image-item new"><i class="fas fa-images"></i> Before/After: Dirty vs. clean surface</div>
+              <div class="image-item new"><i class="fas fa-images"></i> Product Image 5: Multiple bottles (family pack)</div>
+            </div>
+            <div class="content-meta">Total: 8 images (3 existing + 5 new)</div>
+            <div class="content-improvements">
+              <div class="improvement"><i class="fas fa-check"></i> Added 5 new images (meets 8-image benchmark)</div>
+              <div class="improvement"><i class="fas fa-check"></i> Includes lifestyle and in-use shots</div>
+              <div class="improvement"><i class="fas fa-check"></i> Demonstrates product effectiveness</div>
+            </div>
+          </div>
+          <div class="content-section">
+            <h4>Keywords Added</h4>
+            <div class="content-value improved-text">eco-friendly, antibacterial, non-toxic, biodegradable, family-safe, pet-safe, lemon scent, kitchen cleaner, bathroom cleaner</div>
+            <div class="content-meta">Total: 12 keywords (+9)</div>
+            <div class="content-improvements">
+              <div class="improvement"><i class="fas fa-check"></i> Added 9 high-value keywords</div>
+              <div class="improvement"><i class="fas fa-check"></i> Includes eco/natural terms</div>
+              <div class="improvement"><i class="fas fa-check"></i> Specific use case keywords</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 3: Summary & Impact -->
+        <div class="content-column impact">
+          <div class="column-header">
+            <h3>Summary &amp; Impact</h3>
+          </div>
+          <div class="content-section">
+            <h4>Improvements Checklist</h4>
+            <div class="checklist">
+              <div class="checklist-item"><i class="fas fa-check-circle"></i> Added 9 high-value keywords</div>
+              <div class="checklist-item"><i class="fas fa-check-circle"></i> Expanded description by 231 characters (+427%)</div>
+              <div class="checklist-item"><i class="fas fa-check-circle"></i> Added benefit-driven copy structure</div>
+              <div class="checklist-item"><i class="fas fa-check-circle"></i> Included ingredient/safety callouts (non-toxic, biodegradable)</div>
+              <div class="checklist-item"><i class="fas fa-check-circle"></i> Added 5 lifestyle images</div>
+              <div class="checklist-item"><i class="fas fa-check-circle"></i> Optimized title for SEO (82 chars vs. 22)</div>
+              <div class="checklist-item"><i class="fas fa-check-circle"></i> Added sensory details (lemon scent)</div>
+              <div class="checklist-item"><i class="fas fa-check-circle"></i> Listed specific use cases (kitchen, bathroom, glass)</div>
+            </div>
+          </div>
+          <div class="impact-box">
+            <h4><i class="fas fa-bullseye"></i> Predicted Performance Lift</h4>
+            <div class="impact-metric">
+              <span class="impact-label">Content Score:</span>
+              <span class="impact-value">58 → 88 <span class="impact-change">(+30pts, +52%)</span></span>
+            </div>
+            <div class="impact-metric">
+              <span class="impact-label">Organic Rank:</span>
+              <span class="impact-value">#3 → #1 <span class="impact-change">(+2 spots)</span></span>
+            </div>
+            <div class="impact-metric">
+              <span class="impact-label">CVR:</span>
+              <span class="impact-value">2.8% → 3.7% <span class="impact-change">(+0.9pts, +32%)</span></span>
+            </div>
+            <div class="impact-metric">
+              <span class="impact-label">Sales Lift:</span>
+              <span class="impact-value">+$2,400 <span class="impact-change">over next 2 weeks</span></span>
+            </div>
+            <div class="confidence-bar">
+              <div class="confidence-label">Confidence: 87%</div>
+              <div class="confidence-progress">
+                <div class="confidence-fill" style="width: 87%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons" id="contentActions">
+        <button class="btn btn-teal"><i class="fas fa-sync"></i> Generate Alternative</button>
+        <button class="btn btn-outline"><i class="fas fa-edit"></i> Edit Manually</button>
+        <button class="btn btn-outline"><i class="fas fa-times"></i> Cancel</button>
+        <button class="btn btn-primary btn-large" id="deployChanges"><i class="fas fa-rocket"></i> Deploy Changes</button>
+      </div>
+
+      <!-- Success State -->
+      <div class="success-message" id="successMessage" style="display: none;">
+        <div class="success-content">
+          <span class="success-icon"><i class="fas fa-check-circle"></i></span>
+          <span class="success-text">Content deployed successfully to Target. Impact tracking enabled.</span>
+          <span class="deployment-badge">Deployment In Progress</span>
+        </div>
+        <button class="btn btn-primary" id="trackImpactBtn">📊 Track Impact (Simulated - 2 Weeks Later)</button>
+      </div>
+
+      <!-- Impact Tracking View -->
+      <div class="impact-tracking" id="impactTracking" style="display: none;">
+        <div class="tracking-header">
+          <h3><i class="fas fa-chart-line"></i> Impact Tracking: SKU003 Content Update</h3>
+          <div class="tracking-meta">
+            <span>Deployment Date: November 13, 2025</span>
+            <span class="live-badge">LIVE</span>
+            <span>Time Since Deployment: 14 days</span>
+          </div>
+        </div>
+        <div class="comparison-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Before (Pre-Fix)</th>
+                <th>After (Post-Fix)</th>
+                <th>Change</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Content Score</td>
+                <td>58/100</td>
+                <td>88/100</td>
+                <td>+30pts (+52%)</td>
+                <td><span class="table-badge success"><i class="fas fa-check-circle"></i> Exceeded forecast</span></td>
+              </tr>
+              <tr>
+                <td>Organic Rank</td>
+                <td>#3</td>
+                <td>#1</td>
+                <td>+2 spots</td>
+                <td><span class="table-badge success"><i class="fas fa-check-circle"></i> Met forecast</span></td>
+              </tr>
+              <tr>
+                <td>CVR</td>
+                <td>2.8%</td>
+                <td>3.9%</td>
+                <td>+1.1pts (+39%)</td>
+                <td><span class="table-badge success"><i class="fas fa-check-circle"></i> Exceeded forecast</span></td>
+              </tr>
+              <tr>
+                <td>Sales (2 weeks)</td>
+                <td>$12,400</td>
+                <td>$15,050</td>
+                <td>+$2,650 (+21%)</td>
+                <td><span class="table-badge success"><i class="fas fa-check-circle"></i> Exceeded forecast</span></td>
+              </tr>
+              <tr>
+                <td>P-Page Traffic</td>
+                <td>8,200</td>
+                <td>11,500</td>
+                <td>+3,300 (+40%)</td>
+                <td><span class="table-badge success"><i class="fas fa-check-circle"></i> Additional benefit</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="ai-summary">
+          <span class="summary-icon"><i class="fas fa-trophy"></i></span>
+          <p class="summary-text">Your content update for SKU003 <strong>exceeded forecasted impact</strong>. Actual sales lift: <strong>$2,650</strong> (vs. forecast $2,400). Organic rank improved to <strong>#1</strong> as predicted. CVR recovery outpaced forecast by <strong>0.2pts</strong>.</p>
+          <p class="summary-recommendation"><i class="fas fa-lightbulb"></i> Apply similar content strategy to SKU002 and SKU004.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scenario Simulator Modal -->
+  <div class="modal-overlay" id="simulatorModal" style="display: none;">
+    <div class="modal">
+      <div class="modal-header">
+        <h3><i class="fas fa-sliders-h"></i> Scenario Simulator: Content Score Improvement</h3>
+        <button class="modal-close" id="closeSimulator"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="simulator-grid">
+          <div class="simulator-column">
+            <h4>Current State</h4>
+            <div class="simulator-metric">
+              <span class="metric-label">Image Score</span>
+              <span class="metric-badge critical">42/100</span>
+            </div>
+            <p class="metric-detail">3 product images only</p>
+            <div class="simulator-metric">
+              <span class="metric-label">Description Score</span>
+              <span class="metric-badge critical">45/100</span>
+            </div>
+          </div>
+          <div class="simulator-column">
+            <h4>After Improvements</h4>
+            <div class="simulator-metric">
+              <span class="metric-label">Image Score</span>
+              <span class="metric-badge success">85/100</span>
+            </div>
+            <p class="metric-detail">5 images (added 2 lifestyle shots)</p>
+            <div class="simulator-metric">
+              <span class="metric-label">Description Score</span>
+              <span class="metric-badge success">88/100</span>
+            </div>
+            <p class="metric-detail">270 characters (optimized)</p>
+          </div>
+        </div>
+        <div class="forecast-section">
+          <h4>Forecasted Impact</h4>
+          <div class="forecast-grid">
+            <div class="forecast-card">
+              <div class="forecast-label">Content Score</div>
+              <div class="forecast-value">58 → 88</div>
+              <div class="forecast-change">(+30pts, +52%)</div>
+            </div>
+            <div class="forecast-card">
+              <div class="forecast-label">Organic Rank</div>
+              <div class="forecast-value">#3 → #1</div>
+              <div class="forecast-change">(+2 spots)</div>
+            </div>
+            <div class="forecast-card">
+              <div class="forecast-label">CVR</div>
+              <div class="forecast-value">2.8% → 3.6%</div>
+              <div class="forecast-change">(+0.8pts, +29%)</div>
+            </div>
+            <div class="forecast-card">
+              <div class="forecast-label">Sales Lift</div>
+              <div class="forecast-value">+$1,200</div>
+              <div class="forecast-change">over 2 weeks</div>
+            </div>
+          </div>
+          <div class="confidence-bar">
+            <div class="confidence-label">Confidence: 85%</div>
+            <div class="confidence-progress">
+              <div class="confidence-fill" style="width: 85%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" id="cancelSimulator"><i class="fas fa-times"></i> Cancel</button>
+        <button class="btn btn-primary btn-large" id="applyChanges"><i class="fas fa-check"></i> Apply Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Copilot Chat Panel -->
+  <div class="chat-panel" id="chatPanel" style="display: none;">
+    <div class="chat-header">
+      <h3><i class="fas fa-robot"></i> AI Assistant</h3>
+      <button class="chat-close" id="closeChat"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="chat-body" id="chatBody">
+      <div class="chat-message user">
+        <div class="message-bubble">Why did conversion rate drop for SKU003 at Target, and what should I do?</div>
+      </div>
+      <div class="chat-message ai">
+        <div class="message-icon"><i class="fas fa-robot"></i></div>
+        <div class="message-bubble">
+          <p><strong>Three factors contributed to the 22% CVR drop for SKU003 at Target:</strong></p>
+          <p><strong>1. Primary Driver:</strong> Product was out-of-stock for 3 days (Nov 10-12), causing traffic to convert elsewhere</p>
+          <p><strong>2. Rating Impact:</strong> Rating dropped from 4.6 to 4.2 stars due to 3 recent 1-star reviews mentioning 'ineffective cleaning' and 'chemical smell'</p>
+          <p><strong>3. Competitive Pressure:</strong> Competitor EcoClean cut price by 15% on similar product (now $8.99 vs. your $10.49)</p>
+          <p><strong>Recommended Actions:</strong></p>
+          <ul>
+            <li><strong>Immediate:</strong> Ensure restock and implement inventory alerts to prevent future OOS</li>
+            <li><strong>Short-term:</strong> Address review concerns with response campaign and consider reformulation messaging</li>
+            <li><strong>Strategic:</strong> Improve content (add lifestyle images, expand description) to strengthen value proposition vs. competitor</li>
+          </ul>
+          <p>Would you like me to simulate recovery scenarios or route you to specific actions?</p>
+        </div>
+      </div>
+      <div class="quick-replies" id="quickReplies">
+        <button class="quick-reply" data-reply="simulate"><i class="fas fa-sliders-h"></i> Simulate recovery scenarios</button>
+        <button class="quick-reply" data-reply="content"><i class="fas fa-edit"></i> Show me content improvements</button>
+        <button class="quick-reply" data-reply="combined"><i class="fas fa-question-circle"></i> What if we fix stock and images?</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
