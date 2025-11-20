@@ -1,0 +1,9 @@
+sku_id,retailer,overall_health,title_score,desc_score,image_score,keyword_score,rating_score,review_score
+SKU001,Amazon,88,92,90,85,88,4.7,92
+SKU002,Walmart,72,78,68,70,72,4.3,75
+SKU003,Target,58,72,45,42,55,4.2,68
+SKU004,Target,82,88,85,80,82,4.5,86
+SKU005,Costco,76,80,72,75,78,4.6,80
+SKU006,Walmart,91,95,92,88,90,4.8,94
+SKU007,Kroger,68,70,65,68,65,4.1,70
+SKU008,Amazon,85,89,88,82,84,4.6,88

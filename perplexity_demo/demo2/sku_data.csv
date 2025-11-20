@@ -1,0 +1,9 @@
+sku_id,sku_name,category,brand,current_price
+SKU001,Premium Protein Bar,Snacks,SnackSmart,2.99
+SKU002,Organic Energy Drink,Beverages,BrewMasters,3.49
+SKU003,Multi-Purpose Cleaner,Household,CleanHome,10.49
+SKU004,Natural Shampoo,Personal Care,EcoFresh,8.99
+SKU005,Vitamin Supplement,Health,PureVitality,24.99
+SKU006,Laundry Detergent Pods,Household,CleanHome,15.99
+SKU007,Pet Food Dry Kibble,Pet Care,PetWellness,32.99
+SKU008,Coffee Beans Premium,Beverages,BrewMasters,14.99
