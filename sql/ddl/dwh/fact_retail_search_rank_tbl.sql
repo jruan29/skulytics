@@ -1,0 +1,27 @@
+CREATE TABLE `{dwh-project}.skulytics_dev.fact_retail_search_rank_tbl`
+(
+  search_rank_key STRING OPTIONS(description=""Primary key of the table [Primary Key]""),
+  retailer_product_key STRING OPTIONS(description=""Unique identifier for the retailer-product combination [Business Key]""),
+  region_key INT64 OPTIONS(description=""unique identifier from dim_region_tbl [Business Key]""),
+  brand_key INT64 OPTIONS(description=""unique identifier from dim_brand_tbl [Business Key]""),
+  date_key DATE OPTIONS(description=""unique identifier from dim_date_tbl [Business Key]""),
+  ly_date DATE OPTIONS(description=""Corresponding date in the previous calendar year for YoY comparison""),
+  fisc_ly_date DATE OPTIONS(description=""Corresponding date in the previous fiscal year for fiscal YoY comparison""),
+  greg_ly_date DATE OPTIONS(description=""Corresponding date in the previous Gregorian calendar year""),
+  retailer_key INT64 OPTIONS(description=""unique identifier from dim_retailer_tbl [Business Key]""),
+  product_key STRING OPTIONS(description=""unique identifier from dim_product_tbl [Business Key]""),
+  search_result_type STRING OPTIONS(description=""Type of search result""),
+  search_keyword STRING OPTIONS(description=""Keyword used to search the product in the retailer site""),
+  hero_product_flag INT64 OPTIONS(description=""The hero_product_flag is used to identify the hero product. If the flag is set to '1', it indicates a hero product; otherwise, if set to '0', it is not a hero product.""),
+  top_search_keyword_flag INT64 OPTIONS(description=""The top_search_keyword_flag is used to identify a top search keyword. If the flag is set to '1', it indicates a top search keyword; otherwise, if set to '0', it is not.""),
+  search_rank_ty INT64 OPTIONS(description=""ranking of product""),
+  search_rank_ly INT64 OPTIONS(description=""ranking of product last year""),
+  search_rank_fisc_ly INT64 OPTIONS(description=""ranking of product last year for retailer calender""),
+  search_rank_greg_ly INT64 OPTIONS(description=""Last year Ranking of the product in the Gregorian (standard calendar).""),
+  search_rank_record_count_ty INT64 OPTIONS(description=""Count of records for a product in search rank source table""),
+  search_rank_record_count_ly INT64 OPTIONS(description=""Count of records for a product in search rank source table in the previous year""),
+  search_rank_record_count_fisc_ly INT64 OPTIONS(description=""Count of records for a product in search rank source table in the previous fiscal year""),
+  search_rank_record_count_greg_ly INT64 OPTIONS(description=""Count of records for a product in search rank source table in the previous calendar year""),
+  record_created_date TIMESTAMP OPTIONS(description=""timestamp of when the record was created in GCP""),
+  record_updated_date TIMESTAMP OPTIONS(description=""timestamp of when the record was updated in GCP"")
+);
