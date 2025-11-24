@@ -17,7 +17,7 @@ pip install -r requirements.txt
 ### 2. Run the Application
 
 ```bash
-streamlit run skulytics_demo.py
+streamlit run skulytics_dev.py
 ```
 
 The app will automatically open in your default browser at `http://localhost:8501`
@@ -26,7 +26,7 @@ The app will automatically open in your default browser at `http://localhost:850
 
 ## 📁 Files Included
 
-- **skulytics_demo.py** - Main application file with all three modules
+- **skulytics_dev.py** - Main application file with all three modules
 - **requirements.txt** - Python dependencies
 - **Data Files (7 CSV files):**
   - sku_data.csv
@@ -256,11 +256,11 @@ ls *.csv
 streamlit --version
 
 # Try running with verbose output
-streamlit run skulytics_demo.py --logger.level=debug
+streamlit run skulytics_dev.py --logger.level=debug
 ```
 
 ### If data doesn't load:
-- Ensure all 7 CSV files are in the same directory as skulytics_demo.py
+- Ensure all 7 CSV files are in the same directory as skulytics_dev.py
 - Check file permissions
 - Verify CSV files aren't corrupted
 

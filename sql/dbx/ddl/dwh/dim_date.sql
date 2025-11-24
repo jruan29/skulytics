@@ -1,0 +1,27 @@
+CREATE TABLE skulytics_dev.default.dim_date (
+    datekey DATE PRIMARY KEY COMMENT 'Date identifier (YYYY-MM-DD)',
+    full_date DATE COMMENT 'Full calendar date',
+    year INT COMMENT 'Calendar year (e.g., 2024)',
+    month INT COMMENT 'Month number (1-12)',
+    month_name STRING COMMENT 'Month name (January, February, etc.)',
+    month_abbr STRING COMMENT 'Month abbreviation (Jan, Feb, etc.)',
+    week INT COMMENT 'Week of year (1-52)',
+    week_start_date DATE COMMENT 'Monday of the week',
+    week_end_date DATE COMMENT 'Friday of the week',
+    day_of_month INT COMMENT 'Day of month (1-31)',
+    day_of_week INT COMMENT 'Day of week (1=Monday, 7=Sunday)',
+    day_name STRING COMMENT 'Day name (Monday, Tuesday, etc.)',
+    day_abbr STRING COMMENT 'Day abbreviation (Mon, Tue, etc.)',
+    quarter INT COMMENT 'Quarter (1-4)',
+    quarter_name STRING COMMENT 'Quarter name (Q1, Q2, Q3, Q4)',
+    is_weekend BOOLEAN COMMENT 'True if Saturday or Sunday',
+    is_holiday BOOLEAN COMMENT 'True if major retail holiday',
+    holiday_name STRING COMMENT 'Holiday name if applicable',
+    fiscal_year INT COMMENT 'Fiscal year',
+    fiscal_quarter INT COMMENT 'Fiscal quarter (1-4)',
+    fiscal_period INT COMMENT 'Fiscal period/month (1-12)',
+    ly_date DATE COMMENT 'Same date last year (for YoY comparison)',
+    fiscly_date DATE COMMENT 'Same date last fiscal year',
+    gregly_date DATE COMMENT 'Same date last Gregorian year'
+) USING DELTA
+COMMENT 'Date dimension for temporal analysis';

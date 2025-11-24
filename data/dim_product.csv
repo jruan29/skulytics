@@ -1,0 +1,51 @@
+productkey,product_name,brand_key,category,price_tier,base_price,is_hero_product,launch_date,subcategory,upc_code,product_status
+SKU001,TechNova Wireless Earbuds Pro,1,Electronics,Premium,149.99,True,2023-03-15,Audio,223005401501,Active
+SKU003,SmartHome WiFi Camera 360,2,Electronics,Mid,79.99,False,2023-06-01,Smart Home,911856239313,Active
+SKU007,FitLife Yoga Mat Premium,3,Health & Beauty,Mid,49.99,False,2023-01-10,Fitness,367469214295,Active
+SKU009,SmartHome Smart Thermostat,2,Electronics,Mid,129.99,True,2022-11-01,Smart Home,251282538206,Active
+SKU012,TechNova Wireless Charging Pad,1,Electronics,Premium,59.99,True,2023-05-20,Audio,214832269481,Active
+SKU015,HomeEssentials Coffee Maker Deluxe,4,Home & Kitchen,Budget,39.99,False,2022-08-15,Kitchen Appliances,914655221101,Active
+SKU018,GadgetMaster USB-C Hub 7-in-1,6,Electronics,Mid,34.99,False,2023-09-01,Accessories,700832336208,Active
+SKU022,PureGlow Vitamin C Serum,5,Health & Beauty,Premium,79.99,False,2023-02-28,Skincare,748913461122,Active
+SKU002,HomeEssentials Kitchen Appliances SKU002,4,Home & Kitchen,Budget,10.6,False,2022-01-28,Kitchen Appliances,763595448017,Active
+SKU004,PureGlow Skincare SKU004,5,Health & Beauty,Budget,24.32,False,2023-04-05,Skincare,342319992484,Active
+SKU005,PureGlow Skincare SKU005,5,Health & Beauty,Mid,86.66,True,2023-03-09,Skincare,275259659197,Active
+SKU006,FitLife Fitness SKU006,3,Health & Beauty,Mid,40.88,False,2022-04-05,Fitness,213114812281,Active
+SKU008,HomeEssentials Kitchen Appliances SKU008,4,Home & Kitchen,Budget,17.18,False,2022-02-14,Kitchen Appliances,985899371430,Active
+SKU010,GadgetMaster Accessories SKU010,6,Electronics,Mid,67.54,False,2023-07-20,Accessories,187525138707,Active
+SKU011,FitLife Fitness SKU011,3,Health & Beauty,Premium,347.41,False,2022-03-13,Fitness,312933106111,Active
+SKU013,TechNova Audio SKU013,1,Electronics,Premium,191.16,False,2022-10-12,Audio,517045625552,Active
+SKU014,HomeEssentials Kitchen Appliances SKU014,4,Home & Kitchen,Premium,433.64,True,2023-11-18,Kitchen Appliances,329159142739,Active
+SKU016,FitLife Fitness SKU016,3,Health & Beauty,Premium,474.66,False,2022-06-25,Fitness,798400899699,Active
+SKU017,PureGlow Skincare SKU017,5,Health & Beauty,Premium,197.92,False,2023-07-25,Skincare,804054194082,Active
+SKU019,SmartHome Pro Smart Home SKU019,2,Electronics,Premium,229.71,False,2022-02-02,Smart Home,349348354829,Active
+SKU020,EcoLiving Sustainability SKU020,7,Home & Kitchen,Mid,58.08,True,2022-08-06,Sustainability,446680801999,Active
+SKU021,GadgetMaster Accessories SKU021,6,Electronics,Mid,57.69,False,2022-09-29,Accessories,256589576361,Active
+SKU023,SmartHome Pro Smart Home SKU023,2,Electronics,Budget,24.9,False,2023-03-15,Smart Home,743158526982,Active
+SKU024,PureGlow Skincare SKU024,5,Health & Beauty,Mid,55.34,False,2023-05-21,Skincare,658939878788,Active
+SKU025,TechNova Audio SKU025,1,Electronics,Budget,27.22,True,2023-11-28,Audio,968270511233,Active
+SKU026,HomeEssentials Kitchen Appliances SKU026,4,Home & Kitchen,Premium,125.41,False,2023-06-26,Kitchen Appliances,615379416985,Active
+SKU027,FitLife Fitness SKU027,3,Health & Beauty,Premium,444.31,True,2023-11-30,Fitness,227649528249,Active
+SKU028,PureGlow Skincare SKU028,5,Health & Beauty,Mid,83.8,False,2022-06-11,Skincare,578001943304,Active
+SKU029,HomeEssentials Kitchen Appliances SKU029,4,Home & Kitchen,Budget,29.08,False,2022-07-02,Kitchen Appliances,939668623711,Active
+SKU030,PureGlow Skincare SKU030,5,Health & Beauty,Budget,27.41,False,2023-09-16,Skincare,656795048359,Active
+SKU031,SmartHome Pro Smart Home SKU031,2,Electronics,Budget,17.48,True,2023-06-28,Smart Home,958793742143,Active
+SKU032,TechNova Audio SKU032,1,Electronics,Premium,229.66,True,2022-11-11,Audio,499127439409,Active
+SKU033,SmartHome Pro Smart Home SKU033,2,Electronics,Budget,14.82,False,2023-05-13,Smart Home,190532572167,Active
+SKU034,EcoLiving Sustainability SKU034,7,Home & Kitchen,Budget,29.56,False,2023-11-07,Sustainability,237979090768,Active
+SKU035,HomeEssentials Kitchen Appliances SKU035,4,Home & Kitchen,Premium,166.05,False,2022-08-05,Kitchen Appliances,566461768998,Active
+SKU036,PureGlow Skincare SKU036,5,Health & Beauty,Premium,375.95,False,2023-01-18,Skincare,815849444665,Active
+SKU037,HomeEssentials Kitchen Appliances SKU037,4,Home & Kitchen,Premium,280.59,False,2022-01-22,Kitchen Appliances,469642176604,Active
+SKU038,PureGlow Skincare SKU038,5,Health & Beauty,Premium,192.05,False,2023-10-09,Skincare,877693993558,Active
+SKU039,TechNova Audio SKU039,1,Electronics,Budget,11.35,True,2023-06-11,Audio,178728590908,Active
+SKU040,SmartHome Pro Smart Home SKU040,2,Electronics,Mid,76.83,False,2023-08-08,Smart Home,895137224815,Active
+SKU041,PureGlow Skincare SKU041,5,Health & Beauty,Mid,47.01,False,2022-04-07,Skincare,307906739442,Active
+SKU042,TechNova Audio SKU042,1,Electronics,Premium,272.42,False,2023-11-21,Audio,158965931802,Active
+SKU043,GadgetMaster Accessories SKU043,6,Electronics,Premium,139.37,False,2022-04-22,Accessories,977630621959,Active
+SKU044,SmartHome Pro Smart Home SKU044,2,Electronics,Budget,13.8,False,2022-10-13,Smart Home,299380463457,Active
+SKU045,HomeEssentials Kitchen Appliances SKU045,4,Home & Kitchen,Budget,27.49,True,2022-04-11,Kitchen Appliances,704971771246,Active
+SKU046,TechNova Audio SKU046,1,Electronics,Premium,499.71,False,2022-08-31,Audio,202946055043,Active
+SKU047,SmartHome Pro Smart Home SKU047,2,Electronics,Mid,63.99,False,2023-01-24,Smart Home,280640463568,Active
+SKU048,TechNova Audio SKU048,1,Electronics,Mid,48.56,False,2023-03-10,Audio,415486858682,Active
+SKU049,GadgetMaster Accessories SKU049,6,Electronics,Premium,498.17,False,2022-06-08,Accessories,635661484746,Active
+SKU050,SmartHome Pro Smart Home SKU050,2,Electronics,Mid,45.24,True,2022-03-04,Smart Home,695865453957,Active

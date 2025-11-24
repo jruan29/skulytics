@@ -1,0 +1,6 @@
+retailer_key,retailer_name,retailer_type,region_key,market_share_pct
+1,Amazon,Marketplace,1,38.7
+2,Walmart.com,Omnichannel,1,6.3
+3,Target.com,Omnichannel,1,3.9
+4,Best Buy,Omnichannel,1,2.1
+5,Company DTC Site,DTC,1,1.5

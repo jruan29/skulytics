@@ -1,0 +1,5 @@
+region_key,region_name,region_code,country,currency,timezone
+0,Global,GLB,Multiple,USD,UTC
+1,North America,NAM,United States,USD,America/New_York
+2,Europe,EUR,United Kingdom,EUR,Europe/London
+3,Asia Pacific,APAC,Australia,AUD,Australia/Sydney

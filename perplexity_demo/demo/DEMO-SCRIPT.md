@@ -6,7 +6,7 @@
 ## 📋 PRE-DEMO CHECKLIST (5 minutes before)
 
 - [ ] Open terminal in demo directory
-- [ ] Run: `streamlit run skulytics_demo.py`
+- [ ] Run: `streamlit run skulytics_dev.py`
 - [ ] Verify app opens in browser
 - [ ] Test that filters work
 - [ ] Close all other browser tabs (clean demo environment)
